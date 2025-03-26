@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ai-sdk-preview-attachments.vercel.dev"),
-  title: "Attachments Preview",
+  metadataBase: new URL("https://cotaxAI.vercel.dev"),
+  title: "Cotax.AI",
   description: "Experimental preview of attachments in useChat hook",
 };
 

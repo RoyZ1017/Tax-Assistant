@@ -45,8 +45,52 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* Adding global padding and margin utilities */
 @layer utilities {
+  .container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .message-container {
+    padding: 0 16px; /* Horizontal padding for better alignment */
+  }
+
+  /* For more space between the message bubbles and input form */
+  .form-container {
+    padding: 16px;
+    margin-top: 24px; /* Added margin to space out the form */
+  }
+
+  /* Custom class for adding more padding around the chat interface */
+  .chat-container {
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  /* Balanced text for readability */
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px; /* Makes the scrollbar thinner */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #2e2e2e; /* Dark background for the track */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #444444; /* Darker thumb to match the background */
+    border-radius: 10px; /* Rounded thumb */
+    border: 2px solid #2e2e2e; /* Slightly darker border to make the thumb more visible */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #666666; /* Slightly lighter thumb when hovering */
   }
 }
