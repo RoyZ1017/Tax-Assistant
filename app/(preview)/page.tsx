@@ -6,8 +6,8 @@ import {
   UserIcon,
 } from "@/components/icons";
 import { useChat } from "ai/react";
-import React, { DragEvent, useEffect, useRef, useState } from "react"; 
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react"; 
+import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { Markdown } from "@/components/markdown";
 
@@ -57,34 +57,6 @@ export default function Home() {
         } else {
           toast.error("Only image, text, and PDF files are allowed");
         }
-      }
-    }
-  };
-
-  const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-  };
-
-  const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-  };
-
-  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    const droppedFiles = event.dataTransfer.files;
-    const droppedFilesArray = Array.from(droppedFiles);
-    if (droppedFilesArray.length > 0) {
-      const validFiles = droppedFilesArray.filter(
-        (file) =>
-          file.type.startsWith("image/") ||
-          file.type.startsWith("text/") ||
-          file.type === "application/pdf"  // Allow PDF files
-      );
-
-      if (validFiles.length === droppedFilesArray.length) {
-        setFiles((prevFiles) => [...prevFiles, ...validFiles]); // Append valid files to the existing ones
-      } else {
-        toast.error("Only image, text, and PDF files are allowed!");
       }
     }
   };
